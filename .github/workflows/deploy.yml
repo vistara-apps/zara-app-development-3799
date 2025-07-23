@@ -29,6 +29,6 @@ jobs:
       with:
         context: .
         push: true
-        tags: registry.vistara.dev/dc3ad4e9-31a0-4f57-9ae5-9cd85620b678:{{ env.TAG }}
+        tags: registry.vistara.dev/dc3ad4e9-31a0-4f57-9ae5-9cd85620b678:${{ env.TAG }}
         cache-from: type=gha
         cache-to: type=gha,mode=max
