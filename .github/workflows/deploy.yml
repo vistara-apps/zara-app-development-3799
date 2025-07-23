@@ -12,6 +12,15 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
+    - name: Set Docker tag
+      id: vars
+      run: |
+        if [ "${{ github.event_name }}" = "pull_request" ]; then
+          echo "TAG=pr-${{ github.event.number }}" >> $GITHUB_ENV
+        else
+          echo "TAG=latest" >> $GITHUB_ENV
+        fi
+
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
     
@@ -20,6 +29,6 @@ jobs:
       with:
         context: .
         push: true
-        tags: registry.vistara.dev/dc3ad4e9-31a0-4f57-9ae5-9cd85620b678:latest
+        tags: registry.vistara.dev/dc3ad4e9-31a0-4f57-9ae5-9cd85620b678:{{ env.TAG }}
         cache-from: type=gha
         cache-to: type=gha,mode=max
