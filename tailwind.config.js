@@ -14,6 +14,8 @@ export default {
           success: '#22c55e',
           danger: '#ef4444',
           warning: '#f59e0b',
+          text: '#f8fafc',
+          'text-secondary': '#94a3b8',
         },
         border: '#374151',
       }

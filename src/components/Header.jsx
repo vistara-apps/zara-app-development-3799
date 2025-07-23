@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
-import { Shield, BarChart, Bell, Crown } from 'lucide-react'
+import { Shield, BarChart, Bell, Crown, MessageCircle } from 'lucide-react'
 
 const Header = () => {
   const location = useLocation()
@@ -10,6 +10,7 @@ const Header = () => {
     { path: '/', label: 'Dashboard', icon: BarChart },
     { path: '/alerts', label: 'Alerts', icon: Bell },
     { path: '/analytics', label: 'Analytics', icon: BarChart },
+    { path: '/chat', label: 'Chat', icon: MessageCircle },
     { path: '/premium', label: 'Premium', icon: Crown },
   ]
 
